@@ -85,7 +85,7 @@ var Ship = function() {
 	var shapeBody = World.b2World.CreateBody(shapeBd);
 	Actor.call(this, shapeBody);
 	this.angle = 0;
-	this.shoot = false;
+	this.shoot = 0;
 }
 
 Ship.prototype = new Actor();
@@ -285,12 +285,10 @@ var World = {
 				}
 			}
 			if (Keyboard.isKeyDown(KEYS.SPACE)) {
-				if (!this.playerShip.shoot) {
+				if (this.playerShip.shoot < Date.now()) {
 					this.playerShip.shootNow();
-					this.playerShip.shoot = true;
+					this.playerShip.shoot = Date.now() + 300;
 				}
-			} else {
-				this.playerShip.shoot = false;
 			}
 		} else {
 			if (Keyboard.isKeyDown(KEYS.SPACE) && !Game.load) { //only restart if not on the "Get Ready" scene.
