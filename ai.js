@@ -25,9 +25,9 @@ var Keyboard = {
 	keys : {
 		32: function(){return true}, 
 		38: function(){if (Date.now() > Keyboard.changeSpeed) { Keyboard.speed = Math.random(); Keyboard.changeSpeed = Date.now() + 200 } return Keyboard.speed > 0.7},
-		37: function(){if (Date.now() > Keyboard.changeDirections) { Keyboard.left = Math.random(); Keyboard.changeDirections = Date.now() + 200 } return Keyboard.direction > 0.7}, 
-		39: function(){return Keyboard.speed < 0.3}, 
-		40: function(){return Keyboard.direction < 0.3}
+		37: function(){if (Date.now() > Keyboard.changeDirections) { Keyboard.direction = Math.random(); Keyboard.changeDirections = Date.now() + 200 } return Keyboard.direction > 0.7}, 
+		39: function(){return Keyboard.direction < 0.3}, 
+		40: function(){return Keyboard.speed < 0.3}
 		},
 	isKeyDown : function (_k) {
 		if (_k in this.keys)
