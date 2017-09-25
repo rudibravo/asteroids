@@ -1,0 +1,53 @@
+body {
+	background-color:black;
+}
+
+#canvas-wrap { 
+	position:relative; 
+	width:640px; 
+	height:480px;
+	border: 1px solid white;
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#canvas-wrap canvas { 
+	position:absolute; 
+	top:0; 
+	left:0; 
+	z-index:0;
+}
+
+#div-score {
+	color:white;
+}
+
+#div-life {
+	position:absolute;
+	top:0;
+	right:5px;
+	color: white;
+}
+
+#div-main {
+	position:absolute;
+	top:200px;
+	right:255px;
+    color:white;
+}
+
+#div-gameover {
+	position:absolute;
+	top:180px;
+	right:290px;
+    color:white;
+}
+
+#div-getready {
+	position:absolute;
+	top:200px;
+	right:290px;
+    color:white;
+}
